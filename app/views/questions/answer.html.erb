@@ -1,0 +1,21 @@
+<div class="bg-info text-white rounded col-8">
+  <h3 class="mt-4 p-2"><%= @answer %></h3>
+  <h3 class="mb-2 p-2"><em>-You</em></h3>
+</div>
+
+<% if @answer == "I am going to work" %>
+  <% @response = "Great!" %>
+<% elsif @answer.include? "?" %>
+  <% @response = "Silly question, get dressed and go to work!" %>
+<% else %>
+  <% @response = "I don't care, get dressed and go to work!" %>
+<% end %>
+
+<div class="bg-dark text-white rounded col-8">
+  <h3 class="mt-4 p-2"><%= @response %></h3>
+  <h3 class="mb-2 p-2"><em>-Your Coach</em></h3>
+</div>
+
+<button class="my-4 btn col-2 text-white">
+  <%= link_to("Ask another question", ask_path) %>
+</button>
